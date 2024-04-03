@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="{%static 'css/estilos.css'%}">
+</head>
+<body> 
+    <a href="http://127.0.0.1:8000/compra/formprov">Agregar nuevo proveedor</a>   
+    <h1>proveedores</h1>
+    {%if proveedores %}
+        <table id="tabela" class="table table-dark table-striped-columns">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Razon Social</th>
+                    <th scope="col">CUIT</th>
+                    <th scope="col">Celular</th>
+                  </tr>
+                </thead>              
+              
+            {%for proveedor in proveedores%}
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{proveedor.id}}</th>
+                            <td>{{proveedor.razonsoc}}</td>
+                            <td>{{proveedor.cuit}}</td>
+                            <td>{{proveedor.celular}}</td>
+                        </tr>                 
+                    </tbody>            
+            {%endfor%}
+        </table>
+        
+    {%else%}
+        <h2>no hay informacion de proveedores</h2>
+    {%endif%}
+    <p> </p>
+      <a class="btn btn-link btn-sm" href="http://127.0.0.1:8000" role="button"><button>Volver a home</button></a>
+    
+</body>
+</html>

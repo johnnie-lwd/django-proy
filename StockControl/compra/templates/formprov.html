@@ -1,0 +1,29 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="{%static 'css/estilos.css'%}">
+</head>
+<body>
+  <div class="container">
+    <h1 align="center">Nuevo Producto</h1>
+    <form method="post">
+      {%csrf_token%}
+      <label for="rsoc">Razon Social</label>
+      <input type="text" id="rsoc" name="razonsoc" placeholder="Razon Social..">
+  
+      <label for="cuit">CUIT</label>
+      <input type="text" id="cuit" name="cuit" placeholder="CUIT..">
+  
+      <label for="celular">Celular</label>
+      <input type="text" id="celular" name="celular" placeholder="Celular..">
+    
+      <input type="submit" value="Guardar">
+    </form>
+  </div>
+  <a class="btn btn-link btn-sm" href="http://127.0.0.1:8000/compra/proveedores" role="button"><button>Volver a listado proveedores</button></a>
+</body>
+</html>
